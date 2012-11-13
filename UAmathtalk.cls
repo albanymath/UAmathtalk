@@ -3,6 +3,7 @@
 \ProvidesFile{UAlogo.png}
 \RequirePackage{etoolbox}
 \newcommand*{\address}[1]{\gdef\@address{#1}}
+\newcommand*{\urladdr}[1]{\gdef\@urladdr{#1}}
 \renewcommand*{\do}[1]{\csgdef{#1}{}}
 \docsvlist{event, eventurl, when, where, moreinfo}
 \DeclareOption{seminar}{%
@@ -50,7 +51,7 @@
   \begin{center}
     \Large
     \eventfont{\href{\eventurl}{\event}} \\[2.5\bigskipamount]
-    \titlefont{\@author}
+    \titlefont{\ifdefvoid{\@urladdr}{\@author}{\href{\@urladdr}{\@author}}}
     \ifdefvoid{\@address}{}{\\\@address} \\[1.5\bigskipamount]
     \titlefont{\@title}                  \\[2.0\bigskipamount]
     \@date                               \\
