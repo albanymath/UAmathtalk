@@ -19,6 +19,12 @@
   \renewcommand*{\where}{ES-143}%
   \renewcommand*{\moreinfo}{(tea \&\ coffee at 2:30 p.m.\ in ES-152)}%
 }
+\DeclareOption{mathclub}{%
+  \renewcommand*{\event}{Math \& Actuarial Club}%
+  \renewcommand*{\eventurl}{http://www.albany.edu/math/mathclub.shtml}%
+  \renewcommand*{\when}{4:15 p.m.}%
+  \renewcommand*{\where}{ES-146}%
+}
 \DeclareOption*{\ClassWarningNoLine{UAmathtalk}
   {Unknown option `\CurrentOption'.\MessageBreak Using default option `seminar'}
 }
