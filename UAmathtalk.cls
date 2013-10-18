@@ -24,6 +24,16 @@
   \renewcommand*{\eventurl}{http://www.albany.edu/math/mathclub.shtml}%
   \renewcommand*{\when}{4:15 p.m.}%
   \renewcommand*{\where}{ES-146}%
+  \newcommand{\footer}{%
+    \vfill
+    \begin{center}
+      \textsf{\large Your student activity fee at work!}
+      \\[1.2ex]
+      \textsf{\large New members are always welcome to join!}
+      \\[1.2ex]
+      \textsf{Join \textbf{UMAC} on \textbf{Facebook} and \textbf{myInvolvement.org} to learn about future events.}
+    \end{center}%
+  }%
 }
 \DeclareOption*{\ClassWarningNoLine{UAmathtalk}
   {Unknown option `\CurrentOption'.\MessageBreak Using default option `seminar'}
