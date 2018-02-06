@@ -1,23 +1,25 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UAmathtalk}[2012/11/01 UAlbany math talk class]
+\ProvidesClass{UAmathtalk}[2018/02/06 UAlbany math talk class]
 \ProvidesFile{UAlogo.png}
 \RequirePackage{etoolbox}
 \newcommand*{\address}[1]{\gdef\@address{#1}}
 \newcommand*{\urladdr}[1]{\gdef\@urladdr{#1}}
 \renewcommand*{\do}[1]{\csgdef{#1}{}}
-\docsvlist{event, eventurl, when, where, moreinfo}
+\docsvlist{event, eventurl, when, where, moreinfo, announcer}
 \DeclareOption{seminar}{%
   \renewcommand*{\event}{Algebra/Topology Seminar}%
-  \renewcommand*{\eventurl}{http://www.albany.edu/~mv312143/seminar/}%
+  \renewcommand*{\eventurl}{https://www.albany.edu/~mv312143/seminar/}%
   \renewcommand*{\when}{1:15 p.m.}%
   \renewcommand*{\where}{ES-143}%
+  \renewcommand*{\announcer}{Marco Varisco}%
 }
 \DeclareOption{colloquium}{%
   \renewcommand*{\event}{Colloquium}%
-  \renewcommand*{\eventurl}{http://www.albany.edu/math/colloquium.shtml}%
+  \renewcommand*{\eventurl}{https://www.albany.edu/math/colloquium.shtml}%
   \renewcommand*{\when}{3:00 p.m.}%
   \renewcommand*{\where}{ES-143}%
   \renewcommand*{\moreinfo}{(tea \&\ coffee at 2:30 p.m.\ in ES-152)}%
+  \renewcommand*{\announcer}{Marco Varisco}%
 }
 \DeclareOption*{\ClassWarningNoLine{UAmathtalk}
   {Unknown option `\CurrentOption'.\MessageBreak Using default option `seminar'}
@@ -27,18 +29,20 @@
 \newcommand{\headerfont}[1]{\textsf{\textbf{\footnotesize#1}}}
 \newcommand{\eventfont} [1]{\textsf{\huge#1}}
 \newcommand{\titlefont} [1]{\textsc{\LARGE#1}}
-\newcommand{\abstractsize}{\large}
+\newcommand*{\abstractsize}{\large}
 \LoadClass[12pt]{article}
 \RequirePackage[empty]{fullpage}
-\RequirePackage{fontspec,hyperref}
+\RequirePackage{fontspec}
+\RequirePackage{microtype}
+\RequirePackage{hyperref}
 \setsansfont{Helvetica Neue}
-\newcommand{\header}{%
+\newcommand*{\header}{%
   \noindent%
   \IfFileExists{UAlogo.png}{%
     \hspace{-27pt}\raisebox{-19pt}{\XeTeXpicfile UAlogo.png scaled 610}\hfill
-    \headerfont{\href{http://www.albany.edu/cas/}%
+    \headerfont{\href{https://www.albany.edu/cas/}%
       {College of Arts and Sciences}}\par\vspace{-11pt}\hfill
-    \headerfont{\href{http://www.albany.edu/math/}%
+    \headerfont{\href{https://www.albany.edu/math/}%
       {Department of Mathematics and Statistics}}%
   }{%
     \ClassWarningNoLine{UAmathtalk}{File `UAlogo.png' not found}%
@@ -46,7 +50,7 @@
   }%
   \bigskip\bigskip
 }
-\renewcommand{\maketitle}{%
+\renewcommand*{\maketitle}{%
   \header
   \begin{center}
     \Large
@@ -65,7 +69,7 @@
 \AtBeginDocument{%
   \hypersetup{pdfinfo={
        Title={\@author, \@title},
-      Author={Marco Varisco},
+      Author={\announcer},
      Subject={\@date, \event},
     Keywords={\event, announcement}
   }}
