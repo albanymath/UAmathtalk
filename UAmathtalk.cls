@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UAmathtalk}[2018/02/06 UAlbany math talk class]
+\ProvidesClass{UAmathtalk}[2019/10/23 UAlbany math talk class]
 \ProvidesFile{UAlogo.png}
 \RequirePackage{etoolbox}
 \newcommand*{\address}[1]{\gdef\@address{#1}}
@@ -32,6 +32,8 @@
 \newcommand*{\abstractsize}{\large}
 \LoadClass[12pt]{article}
 \RequirePackage[empty]{fullpage}
+\RequirePackage{amssymb}
+\RequirePackage{mathtools}
 \RequirePackage{fontspec}
 \RequirePackage{microtype}
 \RequirePackage{hyperref}
