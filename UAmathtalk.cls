@@ -37,7 +37,9 @@
 \RequirePackage{fontspec}
 \RequirePackage{microtype}
 \RequirePackage{hyperref}
-\setsansfont{Helvetica Neue}
+\IfFontExistsTF{Helvetica Neue}%
+  {\setsansfont{Helvetica Neue}}%
+  {\IfFontExistsTF{Arial}{\setsansfont{Arial}}{}}
 \newcommand*{\header}{%
   \noindent%
   \IfFileExists{UAlogo.png}{%
